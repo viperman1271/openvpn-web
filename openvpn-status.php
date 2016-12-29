@@ -53,6 +53,7 @@ function sizeformat($bytesize){
 $stats = parseLog("/etc/openvpn/status.log");
 echo '
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+    <head>OpenVPN Status</head>
     <body>
         <center>';
 echo '
