@@ -58,19 +58,26 @@ function sizeformat($bytesize){
 
 //////////////////////////////////////////////////////////////
 
-mysql_connect('localhost', 'openvpn', 'openvpn');
-mysql_select_db('openvpn');
+function main() {
+    $conn = mysql_connect('localhost', 'openvpn', 'openvpn');
+    if(!$conn) {
+        echo 'Could not connect to the MySQL Database.';
+    }
+    mysql_select_db('openvpn');
 
-$stats = parseLog("/etc/openvpn/openvpn.log");
-foreach($stats['users'] as $user)
-{
-    if($user['CommonName'] != "UNDEF")
+    $stats = parseLog("/etc/openvpn/openvpn.log");
+    foreach($stats['users'] as $user)
     {
-       $result = mysql_query("UPDATE stats SET updated = '".time()."', VirtualAddress = '".$user['VirtualAddress']."', BytesSent='".$user['BytesSent']."', BytesReceived='".$user['BytesReceived']."', LastRef='".$user['LastRef']."' WHERE CommonName='".$user['CommonName']."' AND Since='".$user['Since']."'") or die(mysql_error());
-       echo mysql_affected_rows();
-       if (mysql_affected_rows()==0) {
-          $result = mysql_query("insert into stats (CommonName, RealAddress, BytesReceived, BytesSent, Since, VirtualAddress, LastRef) values ('".$user['CommonName']."', '".$user['RealAddress']."', '".$user['BytesReceived']."', '".$user['BytesSent']."', '".$user['Since']."', '".$user['VirtualAddress']."', '".$user['LastRef']."')");
-       }
+        if($user['CommonName'] != "UNDEF")
+        {
+           $result = mysql_query("UPDATE stats SET updated = '".time()."', VirtualAddress = '".$user['VirtualAddress']."', BytesSent='".$user['BytesSent']."', BytesReceived='".$user['BytesReceived']."', LastRef='".$user['LastRef']."' WHERE CommonName='".$user['CommonName']."' AND Since='".$user['Since']."'") or die(mysql_error());
+           echo mysql_affected_rows();
+           if (mysql_affected_rows()==0) {
+              $result = mysql_query("insert into stats (CommonName, RealAddress, BytesReceived, BytesSent, Since, VirtualAddress, LastRef) values ('".$user['CommonName']."', '".$user['RealAddress']."', '".$user['BytesReceived']."', '".$user['BytesSent']."', '".$user['Since']."', '".$user['VirtualAddress']."', '".$user['LastRef']."')");
+           }
+        }
     }
 }
+
+main();
 ?>
