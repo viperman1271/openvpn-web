@@ -62,8 +62,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>Total</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
             </tr>';
     }
     unset($result);
@@ -72,8 +72,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>'.$row['CommonName'].'</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
            </tr>';
     }
     echo '</table>';
@@ -92,8 +92,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>Total</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     unset($result);
@@ -102,8 +102,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>'.$row['CommonName'].'</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     echo '</table>';
@@ -126,8 +126,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>Total</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     unset($result);
@@ -136,8 +136,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>'.$row['CommonName'].'</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     echo '</table>';
@@ -156,8 +156,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>Total</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     unset($result);
@@ -166,8 +166,8 @@ function history()
     {
         echo '<tr bgcolor="#eeeeee">
             <td>'.$row['CommonName'].'</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     echo '</table>';
@@ -185,8 +185,8 @@ function history()
     while ($row = mysql_fetch_assoc($result)) {
         echo '<tr bgcolor="#eeeeee">
             <td>Total</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     unset($result);
@@ -194,8 +194,8 @@ function history()
     while ($row = mysql_fetch_assoc($result)) {
         echo '<tr bgcolor="#eeeeee">
             <td>'.$row['CommonName'].'</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
             <td>'.sizeformat($row['totalsend']).'</td>
+            <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
     echo '</table>';
