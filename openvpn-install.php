@@ -60,10 +60,13 @@ function install()
     
     $tmpFile = '/tmp/crontab.txt';
     $output = shell_exec('crontab -l');
-    echo $output;
     file_put_contents($tmpFile, $output);
     $newCron = '* * * * * cd ' . dirname(__FILE__) . '; php ' .  dirname(__FILE__) . '/openvpn-cron.php';
-    if( strpos(file_get_contents($tmpFile),$newCron) !== true)
+    if( strpos($output,$newCron) !== false) 
+    { 
+        //Do nothing
+    }
+    else
     {
         file_put_contents($tmpFile, $output.$newCron.PHP_EOL);
         echo exec('crontab '.$tmpFile);
