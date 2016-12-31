@@ -57,6 +57,11 @@ function install()
         logMsg("Could not create table: ". mysql_error());
         return;
     }
+    
+    $output = shell_exec('crontab -l');
+    echo $output . PHP_EOL;
+    //file_put_contents('/tmp/crontab.txt', $output.'* * * * * NEW_CRON'.PHP_EOL);
+    //echo exec('crontab /tmp/crontab.txt');
 }
 
 install();
