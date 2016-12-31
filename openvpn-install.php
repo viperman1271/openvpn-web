@@ -22,6 +22,7 @@ require 'functions/functions.php';
 
 function install()
 {
+    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><title>OpenVPN Web UI Install</title><body>';
     $conn = mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     if(!$conn) 
     {
@@ -71,6 +72,8 @@ function install()
         file_put_contents($tmpFile, $output.$newCron.PHP_EOL);
         echo exec('crontab '.$tmpFile);
     }
+    echo '<center><h1>Install Succeeded</h1></center>';
+    echo '</body></html>';
 }
 
 install();
