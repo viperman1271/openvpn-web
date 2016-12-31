@@ -76,8 +76,10 @@ function history()
             <td>'.sizeformat($row['totalsend']).'</td>
            </tr>';
     }
-    echo '</table>'; 
+    echo '</table>';
+
     unset($result);
+
     echo '<h3>bandwidth totals - Today</h3><br>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
@@ -105,7 +107,7 @@ function history()
         </tr>';
     }
     echo '</table>';
-    
+
     unset($result);
     echo '<h3>bandwidth totals - last 7 days</h3><br>
     <table>
@@ -139,8 +141,9 @@ function history()
         </tr>';
     }
     echo '</table>';
-     
+
     unset($result);
+
     echo '<h3>bandwidth totals - This month</h3><br>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
@@ -168,8 +171,9 @@ function history()
         </tr>';
     }
     echo '</table>';
-     
+
     unset($result);
+
     echo '<h3>bandwidth totals - This year</h3><br>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
