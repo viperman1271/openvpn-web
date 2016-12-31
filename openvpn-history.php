@@ -23,8 +23,8 @@ function history()
             <td>Real Address</td>
             <td>Virtual Address</td>
             <td>Logged In At</td>
-            <td>Data Sent</td>
-            <td>Data Received</td>
+            <td>Received</td>
+            <td>Sent</td>
             <td>Last Activity</td>
         </tr>
     ';
@@ -52,8 +52,8 @@ function history()
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
-            <td>Bytes Sent</td>
-            <td>Bytes Received</td>
+            <td>Received</td>
+            <td>Sent</td>
         </tr>
      
     ';
@@ -84,8 +84,8 @@ function history()
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
-            <td>Bytes Sent</td>
-            <td>Bytes Received</td>
+            <td>Received</td>
+            <td>Sent</td>
         </tr>';
     $result = mysql_query("SELECT sum(BytesSent) as 'totalsend', sum(BytesReceived) as 'totalreceived' FROM stats WHERE LastRef LIKE '%".date("M")." ".date("j")."%".date("Y")."%'") or die(mysql_error());
     while ($row = mysql_fetch_assoc($result)) 
@@ -113,8 +113,8 @@ function history()
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
-            <td>Bytes Sent</td>
             <td>Bytes Received</td>
+            <td>Bytes Sent</td>
         </tr>';
     $like = "LastRef LIKE '%".date("M")." ".date("j")."%".date("Y")."%'";
     for ($i=0; $i<7; $i++)
@@ -148,8 +148,8 @@ function history()
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
-            <td>Bytes Sent</td>
             <td>Bytes Received</td>
+            <td>Bytes Sent</td>
         </tr>';
     $result = mysql_query("SELECT sum(BytesSent) as 'totalsend', sum(BytesReceived) as 'totalreceived' FROM stats WHERE LastRef LIKE '%".date("M")."%".date("Y")."%'") or die(mysql_error());
     while ($row = mysql_fetch_assoc($result)) 
@@ -178,8 +178,8 @@ function history()
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
-            <td>Bytes Sent</td>
             <td>Bytes Received</td>
+            <td>Bytes Sent</td>
         </tr>';
     $result = mysql_query("SELECT sum(BytesSent) as 'totalsend', sum(BytesReceived) as 'totalreceived' FROM stats WHERE LastRef LIKE '%".date("Y")."%'") or die(mysql_error());
     while ($row = mysql_fetch_assoc($result)) {

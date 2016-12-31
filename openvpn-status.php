@@ -28,8 +28,8 @@ echo '
                     <td>Real Address</td>
                     <td>Virtual Address</td>
                     <td>Logged In At</td>
-                    <td>Data Sent</td>
-                    <td>Data Received</td>
+                    <td>Received</td>
+                    <td>Sent</td>
                     <td>Last Activity</td>
                 </tr>
 ';
