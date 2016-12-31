@@ -15,7 +15,7 @@ require 'functions/functions.php';
 function history()
 {
     $stats = parseLog(get_openvpn_status());
-    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><title>OpenVPN Usage History</title><body>';
+    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><title>OpenVPN Usage History</title><body><center>';
     echo '<h3>Active Users</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
