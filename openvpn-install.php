@@ -38,6 +38,7 @@ function install()
         logMsg('Could not select the MySQL Database. Please validate the login information and permissions on the database.');
         logMsg('    db: ' + get_mysql_db());
         logMsg('    ' . mysql_error());
+        return;
     }
     
     $sql = 'CREATE TABLE IF NOT EXISTS `stats` (
@@ -54,6 +55,7 @@ function install()
     if(!$result)
     {
         logMsg("Could not create table: ". mysql_error());
+        return;
     }
 }
 

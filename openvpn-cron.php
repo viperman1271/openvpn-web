@@ -19,10 +19,15 @@ function cron()
     $conn = mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     if(!$conn) 
     {
-        logMsg('Could not connect to the MySQL Database.');
+        logMsg(mysql_error());
         return;
     }
-    mysql_select_db(get_mysql_db());
+    $selectDb = mysql_select_db(get_mysql_db());
+    if(!$selectDb)
+    {
+        logMsg(mysql_error());
+        return;
+    }
 
     $stats = parseLog(get_openvpn_status());
     foreach($stats['users'] as $user)
