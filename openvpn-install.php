@@ -44,7 +44,7 @@ function install()
             `VirtualAddress` text NOT NULL,
             `LastRef` text NOT NULL,
             `updated` bigint(20) NOT NULL
-           ) ENGINE=MyISAM DEFAULT CHARSET=latin1;'
+           ) ENGINE=MyISAM DEFAULT CHARSET=latin1;';
     $result = mysql_query($sql);
     if(!$result)
     {
