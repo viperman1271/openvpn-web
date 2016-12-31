@@ -60,6 +60,8 @@ function install()
     
     $output = shell_exec('crontab -l');
     echo $output . PHP_EOL;
+    $newCron = '* * * * * cd' dirname(__FILE__) . '; php ' .  dirname(__FILE__) . '/openvpn-cron.php';
+    echo $newCron . PHP_EOL;
     //file_put_contents('/tmp/crontab.txt', $output.'* * * * * NEW_CRON'.PHP_EOL);
     //echo exec('crontab /tmp/crontab.txt');
 }
