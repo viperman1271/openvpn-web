@@ -72,7 +72,22 @@ function install()
         file_put_contents($tmpFile, $output.$newCron.PHP_EOL);
         echo exec('crontab '.$tmpFile);
     }
-    echo '<center><h1>Install Succeeded</h1></center>';
+    
+    $errors = 0;
+    //Validate that the time zone settings are correct
+    if(date_default_timezone_get()!=ini_get('date.timezone'))
+    {
+       $errors += 1;
+    }
+    
+    if($errors==0)
+    {
+        echo '<center><h1>Install Succeeded</h1></center>';
+    }
+    else
+    {
+        echo '<center>Install had some warnings</center>';
+    }
     echo '</body></html>';
 }
 
