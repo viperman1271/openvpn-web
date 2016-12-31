@@ -62,8 +62,8 @@ function install()
     $output = shell_exec('crontab -l');
     file_put_contents($tmpFile, $output);
     $newCron = '* * * * * cd ' . dirname(__FILE__) . '; php ' .  dirname(__FILE__) . '/openvpn-cron.php';
-    if( strpos($output,$newCron) !== false) 
-    { 
+    if( strpos($output,$newCron) !== false)
+    {
         //Do nothing
     }
     else
