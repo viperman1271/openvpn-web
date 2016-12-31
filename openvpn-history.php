@@ -48,7 +48,7 @@ function history()
     ';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
-    echo '<h3>Bandwidth Totals - All Time</h3><br>
+    echo '<h3>Bandwidth Totals - All Time</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -80,7 +80,7 @@ function history()
 
     unset($result);
 
-    echo '<h3>Bandwidth Totals - Today</h3><br>
+    echo '<h3>Bandwidth Totals - Today</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
