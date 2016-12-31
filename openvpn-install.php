@@ -15,6 +15,11 @@ CREATE TABLE IF NOT EXISTS `stats` (
 * * * * * cd [cron location]; php cron.php
 */
 
+require 'config/mysql.php';
+require 'config/openvpn.php';
+
+require 'functions/functions.php';
+
 function install()
 {
     $conn = mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
