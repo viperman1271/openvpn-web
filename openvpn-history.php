@@ -16,7 +16,7 @@ function history()
 {
     $stats = parseLog(get_openvpn_status());
     echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><body><center>';
-    echo '<h3>logged in users</h3><br>
+    echo '<h3>Active Users</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -48,7 +48,7 @@ function history()
     ';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
-    echo '<h3>bandwidth totals - all time</h3><br>
+    echo '<h3>Bandwidth Totals - All Time</h3><br>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -80,7 +80,7 @@ function history()
 
     unset($result);
 
-    echo '<h3>bandwidth totals - Today</h3><br>
+    echo '<h3>Bandwidth Totals - Today</h3><br>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -109,7 +109,7 @@ function history()
     echo '</table>';
 
     unset($result);
-    echo '<h3>bandwidth totals - last 7 days</h3><br>
+    echo '<h3>Bandwidth Totals - Last 7 Days</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -144,7 +144,7 @@ function history()
 
     unset($result);
 
-    echo '<h3>bandwidth totals - This month</h3><br>
+    echo '<h3>Bandwidth Totals - This Month</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -174,7 +174,7 @@ function history()
 
     unset($result);
 
-    echo '<h3>bandwidth totals - This year</h3><br>
+    echo '<h3>Bandwidth Totals - This Year</h3>
     <table>
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
