@@ -78,6 +78,7 @@ function install()
     if(date_default_timezone_get()!=ini_get('date.timezone'))
     {
        $errors += 1;
+       echo "ensure that the 'date.timezone' value in the php.ini has been set correctly".PHP_EOL;
     }
     
     if($errors==0)
