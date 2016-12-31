@@ -28,8 +28,8 @@ echo '
                     <td>Real Address</td>
                     <td>Virtual Address</td>
                     <td>Logged In At</td>
-                    <td>Bytes Sent</td>
-                    <td>Bytes Received</td>
+                    <td>Data Sent</td>
+                    <td>Data Received</td>
                     <td>Last Activity</td>
                 </tr>
 ';
@@ -41,8 +41,8 @@ foreach($stats['users'] as $user)
                     <td>'.$user['RealAddress'].'</td>
                     <td>'.$user['VirtualAddress'].'</td>
                     <td>'.$user['Since'].'</td>
-                    <td>'.$user['BytesReceived'].'</td>
-                    <td>'.$user['BytesSent'].'</td>
+                    <td>'.$user['DataSent'].'</td>
+                    <td>'.$user['DataReceived'].'</td>
                     <td>'.$user['LastRef'].'</td>
                 </tr>';
 }

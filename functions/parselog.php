@@ -14,8 +14,10 @@ function parseLog ($log) {
                 $userlookup[$match[2]] = $uid;
                 $status['users'][$uid]['CommonName'] = $match[1];
                 $status['users'][$uid]['RealAddress'] = $match[2];
-                $status['users'][$uid]['BytesReceived'] = sizeformat($match[3]);
-                $status['users'][$uid]['BytesSent'] = sizeformat($match[4]);
+                $status['users'][$uid]['DataReceived'] = sizeformat($match[3]);
+                $status['users'][$uid]['DataSent'] = sizeformat($match[4]);
+                $status['users'][$uid]['BytesReceived'] = $match[3];
+                $status['users'][$uid]['BytesSent'] = $match[4];
                 $status['users'][$uid]['Since'] = $match[5];
                 $uid++;
             }
