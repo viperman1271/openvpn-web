@@ -58,12 +58,16 @@ function install()
         return;
     }
     
+    $tmpFile = '/tmp/crontab.txt';
     $output = shell_exec('crontab -l');
-    echo $output . PHP_EOL;
-    $newCron = '* * * * * cd' dirname(__FILE__) . '; php ' .  dirname(__FILE__) . '/openvpn-cron.php';
-    echo $newCron . PHP_EOL;
-    //file_put_contents('/tmp/crontab.txt', $output.'* * * * * NEW_CRON'.PHP_EOL);
-    //echo exec('crontab /tmp/crontab.txt');
+    echo $output;
+    file_put_contents($tmpFile, $output);
+    $newCron = '* * * * * cd ' . dirname(__FILE__) . '; php ' .  dirname(__FILE__) . '/openvpn-cron.php';
+    if( strpos(file_get_contents($tmpFile),$newCron) !== true)
+    {
+        file_put_contents($tmpFile, $output.$newCron.PHP_EOL);
+        echo exec('crontab '.$tmpFile);
+    }
 }
 
 install();
