@@ -11,7 +11,6 @@
 OPENVPN_RSA_DIR=/etc/openvpn/easy-rsa/2.0
 OPENVPN_KEYS=$OPENVPN_RSA_DIR/keys
 KEY_DOWNLOAD_PATH=/var/www/html/openvpn-web/secure
-KEY_PATH=$KEY_DOWNLOAD_PATH/$CN.zip
 
 # Either read the CN from $1 or prompt for it
 if [ -z "$1" ]
@@ -20,6 +19,8 @@ if [ -z "$1" ]
 else
 	CN=$1
 fi
+
+KEY_PATH=$KEY_DOWNLOAD_PATH/$CN.zip
 
 # Ensure CN isn't blank
 if [ -z "$CN" ]
