@@ -27,36 +27,36 @@ function history()
     <body><center>';
     echo '
     <div class="container body-content">
-    <div class="panel panel-default">
-        <div class="panel-heading">Active Users</div>
-        <div class="panel-body">
-            <table class="table">
-                <tr style="font-weight: bold;" bgcolor="#888888">
-                    <td>Common Name</td>
-                    <td>Real Address</td>
-                    <td>Virtual Address</td>
-                    <td>Logged In At</td>
-                    <td>Received</td>
-                    <td>Sent</td>
-                    <td>Last Activity</td>
-                </tr>
+        <div class="panel panel-default">
+            <div class="panel-heading">Active Users</div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr style="font-weight: bold;" bgcolor="#888888">
+                        <td>Common Name</td>
+                        <td>Real Address</td>
+                        <td>Virtual Address</td>
+                        <td>Logged In At</td>
+                        <td>Received</td>
+                        <td>Sent</td>
+                        <td>Last Activity</td>
+                    </tr>
 ';
     foreach($stats['users'] as $user)
     {  
         echo '
-                <tr bgcolor="#eeeeee">
-                    <td>'.$user['CommonName'].'</td>
-                    <td>'.$user['RealAddress'].'</td>
-                    <td>'.$user['VirtualAddress'].'</td>
-                    <td>'.$user['Since'].'</td>
-                    <td>'.$user['DataSent'].'</td>
-                    <td>'.$user['DataReceived'].'</td>
-                    <td>'.$user['LastRef'].'</td>
-                </tr>';
+                    <tr bgcolor="#eeeeee">
+                        <td>'.$user['CommonName'].'</td>
+                        <td>'.$user['RealAddress'].'</td>
+                        <td>'.$user['VirtualAddress'].'</td>
+                        <td>'.$user['Since'].'</td>
+                        <td>'.$user['DataSent'].'</td>
+                        <td>'.$user['DataReceived'].'</td>
+                        <td>'.$user['LastRef'].'</td>
+                    </tr>';
      }
     echo '
-            </table>
-        </div>
+                </table>
+            </div>
     <center>Live status Last Updated: <b>'.$stats['updated'].'</b>';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
@@ -64,21 +64,21 @@ function history()
     echo '<div class="panel panel-default">
     <div class="panel-heading">Bandwidth Totals - All Time</div>
     <div class="panel-body">
-    <table class="table">
-        <tr style="font-weight: bold;" bgcolor="#888888">
-            <td>Common Name</td>
-            <td>Received</td>
-            <td>Sent</td>
-        </tr>
-     
+        <table class="table">
+            <tr style="font-weight: bold;" bgcolor="#888888">
+                <td>Common Name</td>
+                <td>Received</td>
+                <td>Sent</td>
+            </tr>
     ';
     $result = mysql_query("SELECT sum(BytesSent) as 'totalsend', sum(BytesReceived) as 'totalreceived' FROM stats") or die(mysql_error());
     while ($row = mysql_fetch_assoc($result)) 
     {
-        echo '<tr bgcolor="#eeeeee">
-            <td>Total</td>
-            <td>'.sizeformat($row['totalsend']).'</td>
-            <td>'.sizeformat($row['totalreceived']).'</td>
+        echo '          
+            <tr bgcolor="#eeeeee">
+                <td>Total</td>
+                <td>'.sizeformat($row['totalsend']).'</td>
+                <td>'.sizeformat($row['totalreceived']).'</td>
             </tr>';
     }
     unset($result);
