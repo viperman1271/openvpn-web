@@ -15,9 +15,18 @@ require 'functions/functions.php';
 function history()
 {
     $stats = parseLog(get_openvpn_status());
-    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><title>OpenVPN Usage History</title><body><center>';
+    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><title>OpenVPN Usage History</title>';
+    echo '<!-- Latest compiled and minified CSS -->';
+    echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">';
+    echo '<!-- Optional theme -->';
+    echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">';
+
+    echo '<!-- Latest compiled and minified JavaScript -->';
+    echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>';
+    echo '<body><center>';
     echo '<h3>Active Users</h3>
-    <table>
+    <div class="container">
+    <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Real Address</td>
@@ -42,6 +51,7 @@ function history()
      }
     echo '
     </table>
+    </div>
     <br>
     <center>Live status Last Updated: <b>'.$stats['updated'].'
     </b>
@@ -49,7 +59,8 @@ function history()
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
     echo '<h3>Bandwidth Totals - All Time</h3>
-    <table>
+    <div class="container">
+    <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Received</td>
@@ -76,12 +87,13 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
            </tr>';
     }
-    echo '</table>';
+    echo '</table></div>';
 
     unset($result);
 
     echo '<h3>Bandwidth Totals - Today</h3>
-    <table>
+    <div class="container">
+    <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Received</td>
@@ -106,11 +118,12 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table>';
+    echo '</table></div>';
 
     unset($result);
     echo '<h3>Bandwidth Totals - Last 7 Days</h3>
-    <table>
+    <div class="container">
+    <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Bytes Received</td>
@@ -140,12 +153,13 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table>';
+    echo '</table></div>';
 
     unset($result);
 
     echo '<h3>Bandwidth Totals - This Month</h3>
-    <table>
+    <div class="container">
+    <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Bytes Received</td>
@@ -170,12 +184,13 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table>';
+    echo '</table></div>';
 
     unset($result);
 
     echo '<h3>Bandwidth Totals - This Year</h3>
-    <table>
+    <div class="container">
+    <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Bytes Received</td>
@@ -198,7 +213,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table>';
+    echo '</table></div>';
     echo '</center></body></html>';
 }
 
