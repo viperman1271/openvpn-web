@@ -39,7 +39,8 @@ function history()
     ';
     foreach($stats['users'] as $user)
     {  
-        echo '<tr bgcolor="#eeeeee">
+        echo '
+        <tr bgcolor="#eeeeee">
             <td>'.$user['CommonName'].'</td>
             <td>'.$user['RealAddress'].'</td>
             <td>'.$user['VirtualAddress'].'</td>
@@ -53,9 +54,7 @@ function history()
     </table>
     </div>
     <br>
-    <center>Live status Last Updated: <b>'.$stats['updated'].'
-    </b>
-    ';
+    <center>Live status Last Updated: <b>'.$stats['updated'].'</b>';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
     echo '<h3>Bandwidth Totals - All Time</h3>
