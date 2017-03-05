@@ -24,8 +24,9 @@ function history()
     echo '<!-- Latest compiled and minified JavaScript -->';
     echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>';
     echo '<body><center>';
-    echo '<h3>Active Users</h3>
-    <div class="container">
+    echo '<div class="panel panel-default">
+    <div class="panel-heading">Active Users</div>
+    <div class="panel-body">
     <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -51,14 +52,14 @@ function history()
         </tr>';
      }
     echo '
-    </table>
-    </div>
+    </div></table></div>
     <br>
     <center>Live status Last Updated: <b>'.$stats['updated'].'</b>';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
-    echo '<h3>Bandwidth Totals - All Time</h3>
-    <div class="container">
+    echo '<div class="panel panel-default">
+    <div class="panel-heading">Bandwidth Totals - All Time</div>
+    <div class="panel-body">
     <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -86,12 +87,13 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
            </tr>';
     }
-    echo '</table></div>';
+    echo '</div></table></div>';
 
     unset($result);
 
-    echo '<h3>Bandwidth Totals - Today</h3>
-    <div class="container">
+    echo '<div class="panel panel-default">
+    <div class="panel-heading">Bandwidth Totals - Today</div>
+    <div class="panel-body">
     <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -117,11 +119,12 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table></div>';
+    echo '</div></table></div>';
 
     unset($result);
-    echo '<h3>Bandwidth Totals - Last 7 Days</h3>
-    <div class="container">
+    echo '<div class="panel panel-default">
+    <div class="panel-heading">Bandwidth Totals - Last 7 Days</div>
+    <div class="panel-body">
     <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -152,12 +155,13 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table></div>';
+    echo '</div></table></div>';
 
     unset($result);
 
-    echo '<h3>Bandwidth Totals - This Month</h3>
-    <div class="container">
+    echo '<div class="panel panel-default">
+    <div class="panel-heading">Bandwidth Totals - This Month</div>
+    <div class="panel-body">
     <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -183,12 +187,14 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table></div>';
+    echo '</div></table></div>';
 
     unset($result);
 
     echo '<h3>Bandwidth Totals - This Year</h3>
-    <div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading">Bandwidth Totals - This Year</div>
+    <div class="panel-body">
     <table class="table">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
@@ -212,7 +218,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</table></div>';
+    echo '</div></table></div>';
     echo '</center></body></html>';
 }
 
