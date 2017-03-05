@@ -23,37 +23,40 @@ function history()
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <body><center>';
-    echo '<div class="panel panel-default">
-    <div class="panel-heading">Active Users</div>
-    <div class="panel-body">
-    <table class="table">
-        <tr style="font-weight: bold;" bgcolor="#888888">
-            <td>Common Name</td>
-            <td>Real Address</td>
-            <td>Virtual Address</td>
-            <td>Logged In At</td>
-            <td>Received</td>
-            <td>Sent</td>
-            <td>Last Activity</td>
-        </tr>
-    ';
+    echo '
+    <div class="panel panel-default">
+        <div class="panel-heading">Active Users</div>
+        <div class="panel-body">
+            <table class="table">
+                <tr style="font-weight: bold;" bgcolor="#888888">
+                    <td>Common Name</td>
+                    <td>Real Address</td>
+                    <td>Virtual Address</td>
+                    <td>Logged In At</td>
+                    <td>Received</td>
+                    <td>Sent</td>
+                    <td>Last Activity</td>
+                </tr>
+';
     foreach($stats['users'] as $user)
     {  
         echo '
-        <tr bgcolor="#eeeeee">
-            <td>'.$user['CommonName'].'</td>
-            <td>'.$user['RealAddress'].'</td>
-            <td>'.$user['VirtualAddress'].'</td>
-            <td>'.$user['Since'].'</td>
-            <td>'.$user['DataSent'].'</td>
-            <td>'.$user['DataReceived'].'</td>
-            <td>'.$user['LastRef'].'</td>
-        </tr>';
+                <tr bgcolor="#eeeeee">
+                    <td>'.$user['CommonName'].'</td>
+                    <td>'.$user['RealAddress'].'</td>
+                    <td>'.$user['VirtualAddress'].'</td>
+                    <td>'.$user['Since'].'</td>
+                    <td>'.$user['DataSent'].'</td>
+                    <td>'.$user['DataReceived'].'</td>
+                    <td>'.$user['LastRef'].'</td>
+                </tr>';
      }
     echo '
-    </div></table></div>
+            </table>
+        </div>
+    </div>
     <br>
     <center>Live status Last Updated: <b>'.$stats['updated'].'</b>';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
@@ -88,7 +91,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
            </tr>';
     }
-    echo '</div></table></div>';
+    echo '</table></div></div>';
 
     unset($result);
 
@@ -120,7 +123,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</div></table></div>';
+    echo '</table></div></div>';
 
     unset($result);
     echo '<div class="panel panel-default">
@@ -156,7 +159,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</div></table></div>';
+    echo '</table></div></div>';
 
     unset($result);
 
@@ -188,7 +191,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</div></table></div>';
+    echo '</table></div></div>';
 
     unset($result);
 
@@ -219,7 +222,7 @@ function history()
             <td>'.sizeformat($row['totalreceived']).'</td>
         </tr>';
     }
-    echo '</div></table></div>';
+    echo '</table></div></div>';
     echo '</center></body></html>';
 }
 
