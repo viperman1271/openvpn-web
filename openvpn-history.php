@@ -26,6 +26,7 @@ function history()
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <body><center>';
     echo '
+    <div class="container body-content">
     <div class="panel panel-default">
         <div class="panel-heading">Active Users</div>
         <div class="panel-body">
@@ -56,11 +57,10 @@ function history()
     echo '
             </table>
         </div>
-    </div>
-    <br>
     <center>Live status Last Updated: <b>'.$stats['updated'].'</b>';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
+    echo '</div>';
     echo '<div class="panel panel-default">
     <div class="panel-heading">Bandwidth Totals - All Time</div>
     <div class="panel-body">
@@ -223,6 +223,7 @@ function history()
         </tr>';
     }
     echo '</table></div></div>';
+    echo '</div>';
     echo '</center></body></html>';
 }
 
