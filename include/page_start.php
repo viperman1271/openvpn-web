@@ -1,5 +1,6 @@
 <?php
 
+$page_index_str = '';
 $page_status_str = '';
 $page_history_str = '';
 $page_new_client_str = '';
@@ -20,6 +21,10 @@ else if($page_new_client == TRUE)
 else if($page_install)
 {
     $page_install_str = ' class="active"';
+}
+else
+{
+    $page_index_str = ' class="active"';
 }
 
 $page_before_sidebar = '<!DOCTYPE html>
@@ -119,6 +124,7 @@ $page_sidebar =
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!-- Optionally, you can add icons to the links -->
+        <li' . $page_index_str . '><a href="index.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
         <li' . $page_status_str . '><a href="openvpn-status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
         <li' . $page_history_str . '><a href="openvpn-history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
         <li class="treeview">
