@@ -15,16 +15,6 @@ require 'functions/functions.php';
 function history()
 {
     $stats = parseLog(get_openvpn_status());
-    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-    <title>OpenVPN Usage History</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <body><center>';
     echo '
     <div class="container body-content">
         <div class="panel panel-default">
@@ -224,8 +214,18 @@ function history()
     }
     echo '</table></div></div>';
     echo '</div>';
-    echo '</center></body></html>';
 }
 
+require 'include/page_vars.php';
+
+$page_history = TRUE;
+
+require 'include/page_start.php';
+require 'include/page_end.php';
+
+echo $page_start;
+
 history();
+
+echo $page_end;
 ?>
