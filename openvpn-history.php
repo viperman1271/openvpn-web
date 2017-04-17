@@ -17,7 +17,7 @@ function history()
     $stats = parseLog(get_openvpn_status());
     echo '
     <div class="container body-content">
-        <div class="panel panel-default">
+        <div class="box">
             <div class="box-header">
               <h3 class="box-title">Active Users</h3>
             </div>
@@ -52,7 +52,7 @@ function history()
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
     echo '</div>';
-    echo '<div class="panel panel-default">
+    echo '<div class="box">
     <div class="box-header">
         <h3 class="box-title">Bandwith Totals - All Time</h3>
     </div>
@@ -88,7 +88,7 @@ function history()
 
     unset($result);
 
-    echo '<div class="panel panel-default">
+    echo '<div class="box">
     <div class="box-header">
         <h3 class="box-title">Bandwidth Totals - Today</h3>
     </div>
@@ -121,7 +121,7 @@ function history()
     echo '</table></div></div>';
 
     unset($result);
-    echo '<div class="panel panel-default">
+    echo '<div class="box">
     <div class="box-header">
         <h3 class="box-title">Bandwidth Totals - Last 7 Days</h3>
     </div>
@@ -160,7 +160,7 @@ function history()
 
     unset($result);
 
-    echo '<div class="panel panel-default">
+    echo '<div class="box">
     <div class="box-header">
         <h3 class="box-title">Bandwidth Totals - This Month</h3>
     </div>
@@ -195,7 +195,7 @@ function history()
     unset($result);
 
     echo '<h3>Bandwidth Totals - This Year</h3>
-    <div class="panel panel-default">
+    <div class="box">
     <div class="box-header">
         <h3 class="box-title">Bandwidth Totals - This Year</h3>
     </div>
