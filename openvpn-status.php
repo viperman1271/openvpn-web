@@ -12,6 +12,8 @@ require 'config/openvpn.php';
 
 require 'functions/functions.php';
 
+require 'include/page_vars.php';
+
 require 'include/page_start.php';
 require 'include/page_end.php';
 
