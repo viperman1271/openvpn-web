@@ -12,20 +12,13 @@ require 'config/openvpn.php';
 
 require 'functions/functions.php';
 
-require 'include/page_vars.php';
-
-$page_status = TRUE;
-
-require 'include/page_start.php';
-require 'include/page_end.php';
-
-echo $page_start;
-
 //////////////////////////////////////////////////////////////
 
-$stats = parseLog("/etc/openvpn/status.log");
+function status()
+{
+    $stats = parseLog("/etc/openvpn/status.log");
 
-echo'
+    echo'
         <section class="content-header">
             <h1>Status</h1>
             <ol class="breadcrumb">
@@ -50,13 +43,13 @@ echo'
                         <th>Sent</th>
                         <th>Last Activity</th>
                     </tr>
-';
+    ';
 
-if(array_key_exists('users', $stats))
-{
-    foreach($stats['users'] as $user)
-    {  
-        echo '
+    if(array_key_exists('users', $stats))
+    {
+        foreach($stats['users'] as $user)
+        {  
+            echo '
                     <tr>
                         <td>'.$user['CommonName'].'</td>
                         <td>'.$user['RealAddress'].'</td>
@@ -66,13 +59,25 @@ if(array_key_exists('users', $stats))
                         <td>'.$user['DataReceived'].'</td>
                         <td>'.$user['LastRef'].'</td>
                     </tr>';
+        }
     }
-}
-echo '
+    echo '
                 </table>
             </div>
             <center>Live status Last Updated: <b>'.$stats['updated'].'</b>
         </div>';
-            
+}           
+
+require 'include/page_vars.php';
+
+$page_status = TRUE;
+
+require 'include/page_start.php';
+require 'include/page_end.php';
+
+echo $page_start;
+
+status();
+
 echo $page_end;
 ?>
