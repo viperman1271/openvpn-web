@@ -125,8 +125,8 @@ $page_sidebar =
         <li class="header">MAIN NAVIGATION</li>
         <!-- Optionally, you can add icons to the links -->
         <li' . $page_index_str . '><a href="index.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
-        <li' . $page_status_str . '><a href="openvpn-status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
-        <li' . $page_history_str . '><a href="openvpn-history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
+        <li' . $page_status_str . '><a href="status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
+        <li' . $page_history_str . '><a href="history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-gears"></i> <span>Admin</span>
             <span class="pull-right-container">
@@ -134,8 +134,8 @@ $page_sidebar =
             </span>
           </a>
           <ul class="treeview-menu">
-            <li' . $page_new_client_str . '><a href="openvpn-newclient.php">Create New Client</a></li>
-            <li' . $page_install_str . '><a href="openvpn-install.php">Install</a></li>
+            <li' . $page_new_client_str . '><a href="newclient.php">Create New Client</a></li>
+            <li' . $page_install_str . '><a href="install.php">Install</a></li>
           </ul>
         </li>
       </ul>

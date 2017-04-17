@@ -40,7 +40,7 @@ echo '                    <h3>' . count($stats['users']) . '</h3>';
                 <div class="icon">
                     <i class="fa fa-users"></i>
                 </div>
-                <a href="openvpn-status.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="status.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-xs-6">
@@ -62,7 +62,7 @@ echo '                    <h3>' . $data_sent . '</h3>';
                 <div class="icon">
                     <i class="fa fa-download"></i>
                 </div>
-                <a href="openvpn-status.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="status.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-xs-6">
@@ -79,7 +79,7 @@ echo '
                 <div class="icon">
                     <i class="fa fa-upload"></i>
                 </div>
-                <a href="openvpn-status.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="status.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>
