@@ -1,5 +1,23 @@
 <?php
-$page_start = '<!DOCTYPE html>
+
+$page_status_str = '';
+$page_history_str = '';
+$page_install_str = '';
+
+if($page_status == TRUE)
+{
+    $page_status_str = ' class="active"';    
+}
+else if($page_history == TRUE)
+{
+    $page_history_str = ' class="active"';
+}
+else if($page_install)
+{
+    $page_install_str = ' class="active"';
+}
+
+$page_before_sidebar = '<!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -59,7 +77,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>V</b>PN</span>
       <!-- logo for regular state and mobile devices -->
@@ -89,14 +107,15 @@ desired effect
         <div class="pull-left info">
           <p>Gateway Information</p>
         </div>
-      </div>
+      </div>';
 
-      <!-- Sidebar Menu -->
+$page_sidebar =
+'      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="openvpn-status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
-        <li><a href="openvpn-history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
+        <li' . $page_status_str . '><a href="openvpn-status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
+        <li' . $page_history_str . '><a href="openvpn-history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-gears"></i> <span>Admin</span>
             <span class="pull-right-container">
@@ -104,13 +123,16 @@ desired effect
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="openvpn-newclient.php">Create New Client</a></li>
-            <li><a href="openvpn-install.php">Install</a></li>
+            <li' . $page_new_client_str . '><a href="openvpn-newclient.php">Create New Client</a></li>
+            <li' . $page_install_str . '><a href="openvpn-install.php">Install</a></li>
           </ul>
         </li>
       </ul>
-      <!-- /.sidebar-menu -->
-    </section>
+      <!-- /.sidebar-menu -->';
+      
+      
+$page_after_sidebar = 
+'    </section>
     <!-- /.sidebar -->
   </aside>
 
@@ -118,4 +140,6 @@ desired effect
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">';
+    
+$page_start = $page_before_sidebar . $page_sidebar . $page_after_sidebar;
 ?>
