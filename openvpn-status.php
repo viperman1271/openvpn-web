@@ -14,6 +14,8 @@ require 'functions/functions.php';
 
 require 'include/page_vars.php';
 
+$page_status = TRUE;
+
 require 'include/page_start.php';
 require 'include/page_end.php';
 
