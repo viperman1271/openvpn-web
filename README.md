@@ -1,6 +1,6 @@
 # OpenVPN-WEB
 
-Current version : 2.0.0
+Current version : 2.0.1
 
 Web portal for OpenVPN gateway. Provides some reporting information and basic data visualization for usage of the OpenVPN server.
 
