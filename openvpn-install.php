@@ -22,7 +22,6 @@ require 'functions/functions.php';
 
 function install()
 {
-    echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><title>OpenVPN Web UI Install</title><body>';
     $conn = mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     if(!$conn) 
     {
@@ -89,8 +88,18 @@ function install()
     {
         echo '<center>Install had some warnings</center>';
     }
-    echo '</body></html>';
 }
 
+require 'include/page_vars.php';
+
+$page_install = TRUE;
+
+require 'include/page_start.php';
+require 'include/page_end.php';
+
+echo $page_start;
+
 install();
+
+echo $page_end;
 ?>
