@@ -10,3 +10,6 @@
 ad.js
 TODO
 test.html
+
+config/mysql.php
+config/openvpn.php
