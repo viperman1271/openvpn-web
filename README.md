@@ -1,4 +1,4 @@
-# openvpn-web
+# openvpn-web - v1.0.0
 Web portal for OpenVPN gateway. Provides some reporting information and basic data visualization for usage of the OpenVPN server.
 
 # Installation
