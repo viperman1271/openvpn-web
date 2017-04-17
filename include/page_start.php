@@ -3,6 +3,7 @@
 $page_index_str = '';
 $page_status_str = '';
 $page_history_str = '';
+$page_clients_str = '';
 $page_new_client_str = '';
 $page_install_str = '';
 
@@ -13,6 +14,10 @@ if($page_status == TRUE)
 else if($page_history == TRUE)
 {
     $page_history_str = ' class="active"';
+}
+else if($page_clients == TRUE)
+{
+    $page_clients_str = ' class="active"';
 }
 else if($page_new_client == TRUE)
 {
@@ -127,6 +132,7 @@ $page_sidebar =
         <li' . $page_index_str . '><a href="index.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
         <li' . $page_status_str . '><a href="status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
         <li' . $page_history_str . '><a href="history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
+        <li' . $page_clients_str . '><a href="clients.php"><i class="fa fa-users"></i> <span>Clients</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-gears"></i> <span>Admin</span>
             <span class="pull-right-container">
