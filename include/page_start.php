@@ -13,7 +13,7 @@ else if($page_history == TRUE)
 {
     $page_history_str = ' class="active"';
 }
-else if(page_new_client == TRUE)
+else if($page_new_client == TRUE)
 {
     $page_new_client_str = ' class="active"';
 }
