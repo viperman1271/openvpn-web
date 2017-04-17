@@ -20,34 +20,43 @@ echo $page_start;
 //////////////////////////////////////////////////////////////
 
 $stats = parseLog("/etc/openvpn/status.log");
-echo '
-            <h3>Active Users</h3> 
-            <table>
-                <tr style="font-weight: bold;" bgcolor="#888888">
-                    <td>Common Name</td>
-                    <td>Real Address</td>
-                    <td>Virtual Address</td>
-                    <td>Logged In At</td>
-                    <td>Received</td>
-                    <td>Sent</td>
-                    <td>Last Activity</td>
-                </tr>
+
+echo'
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Striped Full Width Table</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Common Name</th>
+                        <th>Real Address</th>
+                        <th>Virtual Address</th>
+                        <th>Logged In At</th>
+                        <th>Received</th>
+                        <th>Sent</th>
+                        <th>Last Activity</th>
+                    </tr>
 ';
+
 foreach($stats['users'] as $user)
 {  
     echo '
-                <tr bgcolor="#eeeeee">
-                    <td>'.$user['CommonName'].'</td>
-                    <td>'.$user['RealAddress'].'</td>
-                    <td>'.$user['VirtualAddress'].'</td>
-                    <td>'.$user['Since'].'</td>
-                    <td>'.$user['DataSent'].'</td>
-                    <td>'.$user['DataReceived'].'</td>
-                    <td>'.$user['LastRef'].'</td>
-                </tr>';
+                    <tr>
+                        <td>'.$user['CommonName'].'</td>
+                        <td>'.$user['RealAddress'].'</td>
+                        <td>'.$user['VirtualAddress'].'</td>
+                        <td>'.$user['Since'].'</td>
+                        <td>'.$user['DataSent'].'</td>
+                        <td>'.$user['DataReceived'].'</td>
+                        <td>'.$user['LastRef'].'</td>
+                    </tr>';
 }
 echo '
-            </table>';
+                </table>
+            </div>
+        </div>';
             
 echo $page_end;
 ?>
