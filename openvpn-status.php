@@ -24,7 +24,7 @@ $stats = parseLog("/etc/openvpn/status.log");
 echo'
         <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Striped Full Width Table</h3>
+              <h3 class="box-title">Active Users</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
