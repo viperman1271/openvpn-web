@@ -18,9 +18,11 @@ function history()
     echo '
     <div class="container body-content">
         <div class="panel panel-default">
-            <div class="panel-heading">Active Users</div>
-            <div class="panel-body">
-                <table class="table">
+            <div class="box-header">
+              <h3 class="box-title">Active Users</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
                     <tr style="font-weight: bold;" bgcolor="#888888">
                         <td>Common Name</td>
                         <td>Real Address</td>
@@ -46,15 +48,16 @@ function history()
      }
     echo '
                 </table>
-            </div>
-    <center>Live status Last Updated: <b>'.$stats['updated'].'</b>';
+            </div>';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
     echo '</div>';
     echo '<div class="panel panel-default">
-    <div class="panel-heading">Bandwidth Totals - All Time</div>
-    <div class="panel-body">
-        <table class="table">
+    <div class="box-header">
+        <h3 class="box-title">Bandwith Totals - All Time</h3>
+    </div>
+    <div class="box-body no-padding">
+        <table class="table table-striped">
             <tr style="font-weight: bold;" bgcolor="#888888">
                 <td>Common Name</td>
                 <td>Received</td>
@@ -86,9 +89,11 @@ function history()
     unset($result);
 
     echo '<div class="panel panel-default">
-    <div class="panel-heading">Bandwidth Totals - Today</div>
-    <div class="panel-body">
-    <table class="table">
+    <div class="box-header">
+        <h3 class="box-title">Bandwidth Totals - Today</h3>
+    </div>
+    <div class="box-body no-padding">
+    <table class="table table-striped">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Received</td>
@@ -117,9 +122,11 @@ function history()
 
     unset($result);
     echo '<div class="panel panel-default">
-    <div class="panel-heading">Bandwidth Totals - Last 7 Days</div>
-    <div class="panel-body">
-    <table class="table">
+    <div class="box-header">
+        <h3 class="box-title">Bandwidth Totals - Last 7 Days</h3>
+    </div>
+    <div class="box-body no-padding">
+    <table class="table table-striped">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Bytes Received</td>
@@ -154,9 +161,11 @@ function history()
     unset($result);
 
     echo '<div class="panel panel-default">
-    <div class="panel-heading">Bandwidth Totals - This Month</div>
-    <div class="panel-body">
-    <table class="table">
+    <div class="box-header">
+        <h3 class="box-title">Bandwidth Totals - This Month</h3>
+    </div>
+    <div class="box-body no-padding">
+    <table class="table table-striped">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Bytes Received</td>
@@ -187,9 +196,11 @@ function history()
 
     echo '<h3>Bandwidth Totals - This Year</h3>
     <div class="panel panel-default">
-    <div class="panel-heading">Bandwidth Totals - This Year</div>
-    <div class="panel-body">
-    <table class="table">
+    <div class="box-header">
+        <h3 class="box-title">Bandwidth Totals - This Year</h3>
+    </div>
+    <div class="box-body no-padding">
+    <table class="table table-striped">
         <tr style="font-weight: bold;" bgcolor="#888888">
             <td>Common Name</td>
             <td>Bytes Received</td>

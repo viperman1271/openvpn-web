@@ -60,6 +60,7 @@ foreach($stats['users'] as $user)
 echo '
                 </table>
             </div>
+            <center>Live status Last Updated: <b>'.$stats['updated'].'</b>
         </div>';
             
 echo $page_end;
