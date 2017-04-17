@@ -28,7 +28,7 @@ $page_end = '    </section>
               <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
               <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                <h4 class="control-sidebar-subheading">Langdon\'s Birthday</h4>
 
                 <p>Will be 23 on April 24th</p>
               </div>
@@ -83,7 +83,7 @@ $page_end = '    </section>
     </div>
   </aside>
   <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
+  <!-- Add the sidebar\'s background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
