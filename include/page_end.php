@@ -7,7 +7,7 @@ $page_end = '    </section>
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2017 <a href="https://github.com/viperman1271/openvpn-web/" target="_blank">viperman1271</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2017 <a href="https://github.com/viperman1271/openvpn-web/" target="_blank">viperman1271</a></strong>. All rights reserved. Uses AdminLTE Control Panel Template from <a href="https://almsaeedstudio.com/" target="_blank">Almsaeed Studio</a>.
   </footer>
 
   <!-- Control Sidebar -->
