@@ -29,7 +29,7 @@ if [ -z "$CN" ]
 fi
 
 # Create the ovpn file
-cp /var/www/html/config/client.ovpn /tmp/client.ovpn
+cp /var/www/html/openvpn-web/config/client.ovpn /tmp/client.ovpn
 sed -i 's/#CN#/$CN/g' /tmp/client.ovpn
 
 # Check the CN doesn't already exist
