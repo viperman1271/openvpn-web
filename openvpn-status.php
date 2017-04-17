@@ -30,7 +30,7 @@ echo'
             <h1>Status</h1>
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Status</li>
+                <li class="active"><i class="fa fa-files-o"></i> Status</li>
             </ol>
         </section>
         <br/>

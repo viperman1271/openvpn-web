@@ -19,6 +19,13 @@ $result = mysql_query("SELECT sum(BytesSent) as 'totalsend', sum(BytesReceived) 
 echo $page_start;
 ?>
 
+    <section class="content-header">
+      <h1>Home</h1>
+      <ol class="breadcrumb">
+        <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+      </ol>
+    </section>
+    <br/>
     <!-- Small boxes (Stat box) -->
     <div class="row">
         <div class="col-lg-3 col-xs-6">

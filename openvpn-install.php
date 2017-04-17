@@ -85,6 +85,7 @@ echo'
       <h1>Install</h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li>Admin</li>
         <li class="active">Install</li>
       </ol>
     </section>
