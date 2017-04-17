@@ -118,3 +118,4 @@ desired effect
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">';
+?>
