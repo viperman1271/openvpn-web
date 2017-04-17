@@ -79,15 +79,32 @@ function install()
        $errors += 1;
        echo "ensure that the 'date.timezone' value in the php.ini has been set correctly".PHP_EOL;
     }
-    
+
+echo'
+    <section class="content-header">
+      <h1>Install</h1>
+      <ol class="breadcrumb">
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Install</li>
+      </ol>
+    </section>
+    <br/>
+    <div class="box">
+        <center>
+';
     if($errors==0)
     {
-        echo '<center><h1>Install Succeeded</h1></center>';
+        echo '            <h1>Install Succeeded</h1>';
     }
     else
     {
-        echo '<center>Install had some warnings</center>';
+        echo '            Install had some warnings';
     }
+echo '
+        </center>
+        <br/>
+    </div>
+';
 }
 
 require 'include/page_vars.php';
