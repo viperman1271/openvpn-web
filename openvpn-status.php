@@ -26,6 +26,14 @@ echo $page_start;
 $stats = parseLog("/etc/openvpn/status.log");
 
 echo'
+        <section class="content-header">
+            <h1>Status</h1>
+            <ol class="breadcrumb">
+                <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Status</li>
+            </ol>
+        </section>
+        <br/>
         <div class="box">
             <div class="box-header">
               <h3 class="box-title">Active Users</h3>
