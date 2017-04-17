@@ -26,43 +26,10 @@ function history()
       </ol>
     </section>
     <br/>
-    <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Active Users</h3>
-        </div>
-        <div class="box-body no-padding">
-            <table class="table table-striped">
-                <tr style="font-weight: bold;" bgcolor="#888888">
-                    <td>Common Name</td>
-                    <td>Real Address</td>
-                    <td>Virtual Address</td>
-                    <td>Logged In At</td>
-                    <td>Received</td>
-                    <td>Sent</td>
-                    <td>Last Activity</td>
-                </tr>
-';
-    foreach($stats['users'] as $user)
-    {  
-        echo '
-                    <tr bgcolor="#eeeeee">
-                        <td>'.$user['CommonName'].'</td>
-                        <td>'.$user['RealAddress'].'</td>
-                        <td>'.$user['VirtualAddress'].'</td>
-                        <td>'.$user['Since'].'</td>
-                        <td>'.$user['DataSent'].'</td>
-                        <td>'.$user['DataReceived'].'</td>
-                        <td>'.$user['LastRef'].'</td>
-                    </tr>';
-     }
-    echo '
-                </table>
-            </div>';
+    <div class="box">';
     mysql_connect(get_mysql_host(), get_mysql_user(), get_mysql_pass());
     mysql_select_db(get_mysql_db());
     echo '
-    </div>
-    <div class="box">
         <div class="box-header">
             <h3 class="box-title">Bandwith Totals - All Time</h3>
         </div>
