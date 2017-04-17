@@ -33,7 +33,14 @@ echo $page_start;
             <div class="small-box bg-aqua">
                 <div class="inner">
 <?php
-echo '                    <h3>' . count($stats['users']) . '</h3>';
+$connected_clients = 0;
+if(array_key_exists('users', $stats))
+{
+    $connected_clients = count($stats['users']);
+}
+echo '
+                    <h3>' . $connected_clients . '</h3>
+';
 ?>
                     <p>Connected Clients</p>
                 </div>

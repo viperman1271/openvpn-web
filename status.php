@@ -52,9 +52,11 @@ echo'
                     </tr>
 ';
 
-foreach($stats['users'] as $user)
-{  
-    echo '
+if(array_key_exists('users', $stats))
+{
+    foreach($stats['users'] as $user)
+    {  
+        echo '
                     <tr>
                         <td>'.$user['CommonName'].'</td>
                         <td>'.$user['RealAddress'].'</td>
@@ -64,6 +66,7 @@ foreach($stats['users'] as $user)
                         <td>'.$user['DataReceived'].'</td>
                         <td>'.$user['LastRef'].'</td>
                     </tr>';
+    }
 }
 echo '
                 </table>
