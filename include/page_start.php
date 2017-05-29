@@ -168,7 +168,6 @@ $page_sidebar =
             </span>
           </a>
           <ul class="treeview-menu">
-            <li' . $page_new_client_str . '><a href="newclient.php">Create New Client</a></li>
             <li' . $page_install_str . '><a href="install.php">Install</a></li>
           </ul>
         </li>
