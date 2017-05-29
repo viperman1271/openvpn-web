@@ -3,6 +3,7 @@
 $page_index_str = '';
 $page_status_str = '';
 $page_history_str = '';
+$page_clients_str = '';
 $page_new_client_str = '';
 $page_install_str = '';
 
@@ -13,6 +14,10 @@ if($page_status == TRUE)
 else if($page_history == TRUE)
 {
     $page_history_str = ' class="active"';
+}
+else if($page_clients == TRUE)
+{
+    $page_clients_str = ' class="active"';
 }
 else if($page_new_client == TRUE)
 {
@@ -101,6 +106,34 @@ desired effect
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="images/ovpnicon.png" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs"><b>OpenVPN</b> Gateway</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="images/ovpnicon.png" class="img-circle" alt="User Image">
+                <p>
+                  Open Source Web UI
+                  <small>for managing OpenVPN</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <a href="https://github.com/viperman1271/openvpn-web" target="_blank"><center>Available on GitHub</center></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
@@ -127,6 +160,7 @@ $page_sidebar =
         <li' . $page_index_str . '><a href="index.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
         <li' . $page_status_str . '><a href="status.php"><i class="fa fa-files-o"></i> <span>Status</span></a></li>
         <li' . $page_history_str . '><a href="history.php"><i class="fa fa-dashboard"></i> <span>History</span></a></li>
+        <li' . $page_clients_str . '><a href="clients.php"><i class="fa fa-users"></i> <span>Clients</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-gears"></i> <span>Admin</span>
             <span class="pull-right-container">
@@ -134,7 +168,6 @@ $page_sidebar =
             </span>
           </a>
           <ul class="treeview-menu">
-            <li' . $page_new_client_str . '><a href="newclient.php">Create New Client</a></li>
             <li' . $page_install_str . '><a href="install.php">Install</a></li>
           </ul>
         </li>
